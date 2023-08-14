@@ -1,0 +1,148 @@
+<%-include('sHeader')%>
+
+
+    <div class="clearfix"></div>
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div>
+                <%if(messages.success){%>
+                    <div class="p-3 waves-effect waves-light text-white text-center">
+                        <%=messages.success%>
+                    </div>
+                    <%}%>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-4">
+                    <div class="card profile-card-2">
+                        <div class="card-img-block">
+                            <img class="img-fluid" src="<%=data.img%>" style="object-fit: cover;" height="100%"
+                                width="100%" alt="Card image cap">
+                        </div>
+                        <div class="card-body pt-5">
+                            <img src="<%=data.img%>" width="50px" style="object-fit: cover;" alt="profile-image"
+                                class="profile">
+                            <h5 class="card-title">
+                                <%=data.name%>
+                            </h5>
+                            <p class="card-text">
+                                <%=data.email%>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
+                                <li class="nav-item">
+                                    <a href="javascript:void();" data-target="#profile" data-toggle="pill"
+                                        class="nav-link active"><i class="icon-user"></i> <span
+                                            class="hidden-xs">Profile</span></a>
+                                </li>
+                            </ul>
+                            <div class="tab-content p-3">
+                                <div class="tab-pane active" id="profile">
+                                    <h5 class="mb-3">Student Profile</h5>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Name : </strong>
+                                                                <%=data.name%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Mobile Number : </strong>
+                                                                <%=data.phone%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Father Name : </strong>
+                                                                <%=data.fathername%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Father Mobile Number : </strong>
+                                                                <%=data.fatherphone%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Course : </strong>
+                                                                <%=data.course%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Batch Time : </strong>
+                                                                <%=data.batchtime%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Admission Date : </strong>
+                                                                <%=data.admissiondate%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Address : </strong>
+                                                                <%=data.address%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Fees : </strong>
+                                                                <%=data.feeamount%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Pending Fee : </strong>
+                                                                <%=data.pending_fee%>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Student Paid Fee : </strong>
+                                                                <%=data.paid_fee%>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/row-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--start overlay-->
+            <div class="overlay toggle-menu"></div>
+            <!--end overlay-->
+
+        </div>
+        <!-- End container-fluid-->
+    </div><!--End content-wrapper-->
+
+
+
+    <!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
+
+    <%-include('sFooter')%>

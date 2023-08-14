@@ -1,0 +1,78 @@
+<%-include('mHeader')%>
+
+  <div class="clearfix"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div>
+              <%if(messages.success){%>
+                <div class="p-3 bg-primary text-white text-center">
+                  <%=messages.success%>
+                </div>
+                <%}%>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Manager Data Table</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Number</th>
+                      <th scope="col">Manager Name</th>
+                      <th scope="col">Manager Email</th>
+                      <th scope="col">Password</th>
+                      <th scope="col">Image</th>
+                      <th scope="col" class="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%var a=1;%>
+                      <%for(var i of data){%>
+                        <tr>
+                          <th scope="row">
+                            <%=a++%>
+                          </th>
+                          <td>
+                            <%=i.name%>
+                          </td>
+                          <td>
+                            <%=i.email%>
+                          </td>
+                          <td>
+                            <%=i.password%>
+                          </td>
+                          <td>
+                            <img style="object-fit: cover; width: 30px;" src="<%=i.img%>" alt="">
+                          </td>
+                          <td>
+                            <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/manager/sDetails/<%=i.id%>">Details</a>
+                            <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/manager/sDeletedata/<%=i.id%>">Delete</a>
+                              <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/manager/sUpdate/<%=i.id%>">Update</a>
+                          </td>
+                        </tr>
+                        <%}%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--End Row-->
+
+      <!--start overlay-->
+      <div class="overlay toggle-menu"></div>
+      <!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+
+  </div><!--End content-wrapper-->
+  <!--Start Back To Top Button-->
+  <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+  <!--End Back To Top Button-->
+
+  <%-include('mFooter')%>

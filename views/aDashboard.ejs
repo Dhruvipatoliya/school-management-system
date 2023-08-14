@@ -1,0 +1,166 @@
+<%-include('aHeader')%>
+  <div class="clearfix"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+
+      <!--Start Dashboard Content-->
+      <br>
+      <div>
+        <%if(messages.success){%>
+            <div class="p-3 bg-primary text-white text-center">
+                <%=messages.success%>
+            </div>
+        <%}%>
+    </div><br>
+      <div class="card mt-3">
+        <div class="card-content">
+          <div class="row row-group m-0">
+            <div class="col-12 col-lg-6 col-xl-3 border-light">
+              <div class="card-body">
+                <h5 class="text-white mb-0">9526 <span class="float-right"><i class="fa fa-shopping-cart"></i></span>
+                </h5>
+                <div class="progress my-3" style="height:3px;">
+                  <div class="progress-bar" style="width:55%"></div>
+                </div>
+                <p class="mb-0 text-white small-font">Total Orders <span class="float-right">+4.2% <i
+                      class="zmdi zmdi-long-arrow-up"></i></span></p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-3 border-light">
+              <div class="card-body">
+                <h5 class="text-white mb-0">8323 <span class="float-right"><i class="fa fa-usd"></i></span></h5>
+                <div class="progress my-3" style="height:3px;">
+                  <div class="progress-bar" style="width:55%"></div>
+                </div>
+                <p class="mb-0 text-white small-font">Total Revenue <span class="float-right">+1.2% <i
+                      class="zmdi zmdi-long-arrow-up"></i></span></p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-3 border-light">
+              <div class="card-body">
+                <h5 class="text-white mb-0">6200 <span class="float-right"><i class="fa fa-eye"></i></span></h5>
+                <div class="progress my-3" style="height:3px;">
+                  <div class="progress-bar" style="width:55%"></div>
+                </div>
+                <p class="mb-0 text-white small-font">Visitors <span class="float-right">+5.2% <i
+                      class="zmdi zmdi-long-arrow-up"></i></span></p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-3 border-light">
+              <div class="card-body">
+                <h5 class="text-white mb-0">5630 <span class="float-right"><i class="fa fa-envira"></i></span></h5>
+                <div class="progress my-3" style="height:3px;">
+                  <div class="progress-bar" style="width:55%"></div>
+                </div>
+                <p class="mb-0 text-white small-font">Messages <span class="float-right">+2.2% <i
+                      class="zmdi zmdi-long-arrow-up"></i></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Manager Data Table</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Number</th>
+                      <th scope="col">Manager Name</th>
+                      <th scope="col">Manager Email</th>
+                      <th scope="col">Password</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%var a=1;%>
+                      <%for(var i of data){%>
+                        <tr>
+                          <th scope="row">
+                            <%=a++%>
+                          </th>
+                          <td>
+                            <%=i.name%>
+                          </td>
+                          <td>
+                            <%=i.email%>
+                          </td>
+                          <td>
+                            <%=i.password%>
+                          </td>
+                          <td>
+                              <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/admin/mDeletedata/<%=i.id%>">Delete</a>
+                              <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/admin/mUpdate/<%=i.id%>">Update</a>
+                          </td>
+                        </tr>
+                        <%}%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--End Row-->
+
+
+      <!-- COURSE TABLE DATA -->
+
+
+      <div class="row">
+        <div class="col-12 col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Manager Data Table</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Number</th>
+                      <th scope="col">Course</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <%var a=1;%>
+                      <%for(var i of course){%>
+                        <tr>
+                          <th scope="row">
+                            <%=a++%>
+                          </th>
+                          <td>
+                            <%=i.course%>
+                          </td>
+                          <td>
+                              <a style="color: white; padding: 15px;" class="waves-effect waves-light" href="/admin/mCoursedelete/<%=i.id%>">Delete</a>
+                          </td>
+                        </tr>
+                        <%}%>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--End Row-->
+
+      <!--End Dashboard Content-->
+
+      <!--start overlay-->
+      <div class="overlay toggle-menu"></div>
+      <!--end overlay-->
+
+    </div>
+    <!-- End container-fluid-->
+
+  </div><!--End content-wrapper-->
+  <!--Start Back To Top Button-->
+  <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+  <!--End Back To Top Button-->
+
+  <%-include('aFooter')%>
